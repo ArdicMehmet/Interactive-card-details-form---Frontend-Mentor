@@ -335,6 +335,8 @@ input:focus {
   .cardFront {
     min-width: 350px;
     min-height: 200px;
+    width: 350px;
+    height: 200px;
     position: relative;
     bottom: -50px;
   }
@@ -345,6 +347,8 @@ input:focus {
     left: 0;
     min-width: 350px;
     min-height: 200px;
+    width: 350px;
+    height: 200px;
   }
   .cardBack #cvcText {
     position: relative;

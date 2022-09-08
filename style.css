@@ -51,7 +51,6 @@ main {
   width: 80%;
   top: 10%;
   left: 10%;
-  flex-wrap: wrap;
 }
 
 .card {
@@ -336,6 +335,8 @@ input:focus {
   .cardFront {
     min-width: 350px;
     min-height: 200px;
+    position: relative;
+    bottom: -50px;
   }
   .cardText {
     font-size: 16px;
@@ -387,10 +388,14 @@ input:focus {
     right: 2%;
     padding: 0;
   }
+  .cardText {
+    font-size: 16px;
+  }
   .cardFront {
     position: relative;
     left: -5%;
     top: -142px;
+    bottom: 0;
     z-index: 200;
   }
   .cardBack {

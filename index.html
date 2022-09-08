@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Interactive card details form</title>
+
+  <!-- extarnal css-->
+  <link rel="stylesheet" href="./style.css">
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500&display=swap" rel="stylesheet">
+
+  <!-- Font awesome cdn -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+</head>
+
+<body>
+  <div class="bgFirst"></div>
+  <div class="bgSecond"></div>
+  <main>
+    <section class="card">
+      <div class="cardFront">
+        <div class="row">
+          <svg width="84" height="47" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="23.478" cy="23.5" rx="23.478" ry="23.5" fill="#fff" />
+            <path
+              d="M83.5 23.5c0 5.565-4.507 10.075-10.065 10.075-5.559 0-10.065-4.51-10.065-10.075 0-5.565 4.506-10.075 10.065-10.075 5.558 0 10.065 4.51 10.065 10.075Z"
+              stroke="#fff" />
+          </svg>
+        </div>
+        <div class="row cardText">
+          <p id="cardNumberText"></p>
+          <div class="rowBottom">
+            <div id="fullNameText" style="text-transform: uppercase;">JANE APPLESEED</div>
+            <div id="dateText"><span id="monthText">00</span>/<span id="yearText">00</span></div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="cardBack cardText">
+        <p id="cvcText">000</p>
+      </div>
+    </section>
+    <section id="formContainer">
+      <form action="" id="paymentInformation" class="">
+        <div class="row mb">
+          <label for="cardHolderNameInput">CARDHOLDER NAME</label>
+          <input type="text" id="cardHolderNameInput" class="border w100" data-name="cardHolderName"
+            data-text="fullNameText" data-error="cardHolderNameError" name="cardHolderName"
+            placeholder="e.g. Jane Applesed" maxlength="25">
+          <div id="cardHolderNameError" class="errorMessage"></div>
+        </div>
+        <div class="row mb">
+          <label for="cardNumberInput">CARD NUMBER</label>
+          <input type="text" id="cardNumberInput" class="border w100" data-name="cardNumber" data-text="cardNumberText"
+            data-error="cardNumberError" name="cardNumber" placeholder="e.g. 1234 5678 9123 0000" maxlength="16">
+          <div id="cardNumberError" class="errorMessage"></div>
+        </div>
+        <div class="row flexRow mb">
+          <div class="dateInputContainer">
+            <label for="monthInput">EXP. DATE (MM/YY)</label>
+            <div class="dateRow">
+              <input type="text" id="monthInput" class="border" data-name="cardMonth" data-text="monthText"
+                data-error="cardDateError" name="cardMonth" placeholder="MM" maxlength="2">
+              <input type="text" id="yearInput" class="border" data-name="cardYear" data-text="yearText"
+                data-error="cardDateError" name="cardYear" placeholder="YY" maxlength="2">
+            </div>
+            <div id="cardDateError" class="errorMessage"></div>
+          </div>
+          <div class="cvc">
+            <label for="cvcInput">CVC</label>
+            <input type="text" id="cvcInput" class="border" data-name="cardCvc" data-text="cvcText"
+              data-error="cardCvcError" name="cardCvc" placeholder="e.g. 123" maxlength="3">
+            <div id="cardCvcError" class="errorMessage"></div>
+          </div>
+        </div>
+        <div class="row btnDiv">
+          <button id="sendBtn" class="btn" type="submit">Confirm</button>
+
+        </div>
+      </form>
+    </section>
+    <section id="complated">
+      <div class="tick mb">
+        <i class="fa-solid fa-check"></i>
+      </div>
+      <p id="explainHead" class="mb">THANK YOU!</p>
+      <p id="explainBody" class="mb">We've added your card details</p>
+      <button id="continueButton" class="btn" type="submit">Continue</button>
+    </section>
+    <div class="attribution" style="width: 100%; margin-bottom: 40px;">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="#">Mehmet Ardıç</a>.
+    </div>
+  </main>
+
+
+
+  <!-- JavaScript Bundle with Popper -->
+  <script src="./index.js"></script>
+
+</body>
+
+</html>

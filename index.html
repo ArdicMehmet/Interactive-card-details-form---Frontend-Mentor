@@ -24,11 +24,11 @@
 
 <body>
   <div class="bgFirst"></div>
-  <div class="bgSecond"></div>
+  <!-- <div class="bgSecond"></div> -->
   <main>
     <section class="card">
       <div class="cardFront">
-        <div class="row">
+        <div class="rowCard svgContainer">
           <svg width="84" height="47" fill="none" xmlns="http://www.w3.org/2000/svg">
             <ellipse cx="23.478" cy="23.5" rx="23.478" ry="23.5" fill="#fff" />
             <path
@@ -36,10 +36,10 @@
               stroke="#fff" />
           </svg>
         </div>
-        <div class="row cardText">
+        <div class="rowCard cardText">
           <p id="cardNumberText"></p>
           <div class="rowBottom">
-            <div id="fullNameText" style="text-transform: uppercase;">JANE APPLESEED</div>
+            <div id="fullNameText">JANE APPLESEED</div>
             <div id="dateText"><span id="monthText">00</span>/<span id="yearText">00</span></div>
           </div>
         </div>
@@ -51,22 +51,22 @@
     </section>
     <section id="formContainer">
       <form action="" id="paymentInformation" class="">
-        <div class="row mb">
+        <div class="rowForm ">
           <label for="cardHolderNameInput">CARDHOLDER NAME</label>
           <input type="text" id="cardHolderNameInput" class="border w100" data-name="cardHolderName"
             data-text="fullNameText" data-error="cardHolderNameError" name="cardHolderName"
             placeholder="e.g. Jane Applesed" maxlength="25">
           <div id="cardHolderNameError" class="errorMessage"></div>
         </div>
-        <div class="row mb">
+        <div class="rowForm ">
           <label for="cardNumberInput">CARD NUMBER</label>
           <input type="text" id="cardNumberInput" class="border w100" data-name="cardNumber" data-text="cardNumberText"
             data-error="cardNumberError" name="cardNumber" placeholder="e.g. 1234 5678 9123 0000" maxlength="16">
           <div id="cardNumberError" class="errorMessage"></div>
         </div>
-        <div class="row flexRow mb">
+        <div class="rowForm flexRow ">
           <div class="dateInputContainer">
-            <label for="monthInput">EXP. DATE (MM/YY)</label>
+            <label for="monthInput"> <span class="exp">EXP.</span> DATE (MM/YY)</label>
             <div class="dateRow">
               <input type="text" id="monthInput" class="border" data-name="cardMonth" data-text="monthText"
                 data-error="cardDateError" name="cardMonth" placeholder="MM" maxlength="2">
@@ -82,9 +82,8 @@
             <div id="cardCvcError" class="errorMessage"></div>
           </div>
         </div>
-        <div class="row btnDiv">
+        <div class="rowForm">
           <button id="sendBtn" class="btn" type="submit">Confirm</button>
-
         </div>
       </form>
     </section>
@@ -98,7 +97,10 @@
     </section>
 
   </main>
-
+  <div class="attribution" style="width: 100%; margin-bottom: 40px;">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Mehmet Ardıç</a>.
+  </div>
 
 
   <!-- JavaScript Bundle with Popper -->

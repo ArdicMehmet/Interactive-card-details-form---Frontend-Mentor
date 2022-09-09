@@ -3,22 +3,18 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 html {
-  font-size: 18px;
+  font-size: 10px;
 }
-
 body {
-  font-family: "Barlow Semi Condensed", sans-serif;
-  display: flex;
-  flex-direction: row;
   height: 100vh;
-  min-height: 640px;
-  justify-content: flex-start;
-  align-items: flex-start;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Barlow Semi Condensed", sans-serif;
 }
-
 .attribution {
   font-size: 11px;
   text-align: center;
@@ -27,66 +23,252 @@ body {
 .attribution a {
   color: hsl(228, 45%, 44%);
 }
-
 .bgFirst {
-  flex: 1;
   background-image: url("./images/bg-main-desktop.png");
   background-repeat: no-repeat;
-  height: 100vh;
-  min-height: 640px;
-}
-
-.bgSecond {
-  flex: 2;
-  background-color: hsl(0, 0%, 100%);
-  height: 100vh;
-}
-
-main {
+  background-size: cover;
   position: absolute;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 30%;
+  z-index: -100;
+}
+#complated {
+  display: none;
+}
+main {
+  width: 80%;
+  height: 80%;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
-  height: 90vh;
-  width: 80%;
-  top: 10%;
-  left: 10%;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 3rem;
 }
+
+/*--------------------------------------- CARD CSS ---------------------------------------*/
 
 .card {
-  flex: 1;
-  flex-shrink: 0;
+  flex: 1 0 50%;
+  min-width: 400px;
+  min-height: 477px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  padding: 0px;
-}
-
-#formContainer {
-  flex: 1;
-  min-width: 450px;
-  display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
-  padding-top: 35px;
+}
+.card .cardFront {
+  width: 350px;
+  height: 200px;
+  border-radius: 0.8rem;
+  background-image: url("./images/bg-card-front.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 
+.card .cardFront .rowCard {
+  height: 50%;
+  color: white;
+}
+.card .cardFront .svgContainer {
+  padding: 2rem;
+}
+.card .cardFront #cardNumberText {
+  font-size: 3rem;
+  letter-spacing: 0.2rem;
+}
+
+.rowBottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1rem 1rem 0 0;
+  font-size: 1.4rem;
+  opacity: 0.8;
+  text-transform: uppercase;
+}
+.card .cardFront .cardText {
+  padding: 2rem;
+  padding-top: 0;
+}
+.card .cardBack {
+  width: 350px;
+  height: 200px;
+  border-radius: 0.8rem;
+  background-image: url("./images/bg-card-back.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: relative;
+  left: 10rem;
+  top: 0;
+  z-index: 0;
+}
+.card .cardBack #cvcText {
+  font-size: 1.4rem;
+  color: white;
+  letter-spacing: 0.1rem;
+  width: 80%;
+  margin: auto;
+  position: relative;
+  text-align: right;
+  top: 42%;
+}
+
+/*--------------------------------------- FORM CSS ---------------------------------------*/
+
+#formContainer {
+  flex: 1 0 50%;
+  min-width: 400px;
+  min-height: 477px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+#formContainer #paymentInformation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 10rem;
+}
+
+#formContainer #paymentInformation .rowForm input {
+  width: 100%;
+  line-height: 3rem;
+  font-size: 2rem;
+  padding-left: 0.5rem;
+}
+#formContainer #paymentInformation .rowForm label {
+  font-size: 1.4rem;
+  display: block;
+  margin-bottom: 0.6rem;
+  letter-spacing: 0.2rem;
+  display: block;
+}
+.errorMessage {
+  font-size: 1.4rem;
+  color: red;
+  margin-bottom: 0.6rem;
+}
+
+#formContainer #paymentInformation .flexRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.dateInputContainer {
+  flex: 1 0 50%;
+}
+.dateInputContainer .dateRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-right: 1.5rem;
+}
+.dateInputContainer .dateRow input:first-child {
+  margin-right: 0.5rem;
+}
+.cvc {
+  flex: 1 0 50%;
+}
+#sendBtn {
+  width: 100%;
+}
+.btn {
+  display: inline-block;
+  height: 4rem;
+  background-color: hsl(278, 68%, 11%);
+  color: white;
+  border-radius: 0.8rem;
+  margin-top: 1.5rem;
+}
+.btn:hover {
+  opacity: 0.9;
+  cursor: pointer;
+}
+.exp {
+  display: inline-block;
+}
+.border {
+  position: relative;
+  padding: 8px 10px;
+  font-size: 20px;
+  border: 1px solid rgb(191, 190, 190);
+  border-width: 2px;
+  border-radius: 8px;
+  outline: none;
+  opacity: 0.5;
+  /* background-clip: padding-box; */
+}
+.errorBorder {
+  border: 2px solid red;
+}
+input:focus {
+  opacity: 1;
+  border: 2px solid;
+  border-image: linear-gradient(
+      to right,
+      hsl(249, 99%, 64%),
+      hsl(278, 94%, 30%)
+    )
+    1;
+}
+
+/* COMPLATED CSS*/
+
 #complated {
-  margin-top: 100px;
-  flex: 1;
+  flex: 1 0 50%;
+  min-width: 400px;
   display: none;
-  min-width: 450px;
-  padding: 20px;
-  padding-top: 35px;
+  padding: 2rem;
+  padding-top: 13.5rem;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   align-self: flex-start;
   font-family: "Barlow Semi Condensed", sans-serif;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.tick {
+  background-image: linear-gradient(
+    to right bottom,
+    hsl(249, 99%, 64%),
+    hsl(278, 94%, 30%)
+  );
+  padding: 25px 30px;
+  border-radius: 50%;
+  color: white;
+  font-size: 2.4rem;
 }
 
+#explainHead {
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+#explainBody {
+  font-size: 20px;
+  color: rgb(159, 159, 159);
+}
+#continueButton {
+  width: 50%;
+}
+.mb {
+  margin-bottom: 2rem;
+}
+
+/*ANIMATION CSS*/
 .fadeIn {
   animation-name: fadein;
   animation-duration: 0.4s;
@@ -117,322 +299,100 @@ main {
   }
 }
 
-.tick {
-  background-image: linear-gradient(
-    to right bottom,
-    hsl(249, 99%, 64%),
-    hsl(278, 94%, 30%)
-  );
-  padding: 25px 30px;
-  border-radius: 50%;
-  color: white;
-}
-
-#explainHead {
-  font-size: 24px;
-  font-weight: bold;
-  letter-spacing: 2px;
-}
-#explainBody {
-  font-size: 20px;
-  color: rgb(159, 159, 159);
-}
-
-.cardFront {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  width: 60%;
-  min-width: 400px;
-  height: 250px;
-  min-height: 250px;
-  background-image: url("./images/bg-card-front.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  border-radius: 8px;
-  margin-bottom: 20px;
-  padding: 20px 40px;
-}
-
-.cardText {
-  display: flex;
-  flex-direction: column;
-  color: white;
-  font-size: 24px;
-  letter-spacing: 4px;
-}
-
-.cardFront .row {
-  display: flex;
-  width: 100%;
-  height: 50%;
-  margin-bottom: 10px;
-}
-
-.cardFront .cardNumberText p {
-  text-align: right;
-}
-
-.cardFront .rowBottom {
-  font-size: 14px;
-  opacity: 0.8;
-  display: flex;
-  justify-content: space-between;
-  padding-top: 20px;
-}
-.cardFront .rowBottom #fullNameText {
-  flex: 3;
-  max-width: 250px;
-  overflow-y: auto;
-}
-.cardFront .rowBottom #dateText {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
-}
-.cardBack {
-  display: flex;
-  flex-direction: row;
-  width: 60%;
-  min-width: 400px;
-  height: 250px;
-  min-height: 250px;
-  background-image: url("./images/bg-card-back.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  position: relative;
-  left: 20%;
-  border-radius: 8px;
-  padding: 40px;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-.cardBack #cvcText {
-  position: relative;
-  right: 1%;
-  top: -10%;
-  color: white;
-}
-
-#paymentInformation {
-  width: 80%;
-  min-width: 376px;
-  height: 80%;
-}
-
-.w100 {
-  width: 100%;
-}
-
-.w15 {
-  width: 15%;
-}
-
-#paymentInformation label {
-  display: block;
-  margin-bottom: 10px;
-}
-
-.border {
-  position: relative;
-  padding: 8px 10px;
-  font-size: 20px;
-  border: 1px solid rgb(191, 190, 190);
-  border-width: 2px;
-  border-radius: 8px;
-  outline: none;
-  opacity: 0.5;
-  background-clip: padding-box;
-}
-
-input:focus {
-  opacity: 1;
-  border: 2px solid;
-  border-image: linear-gradient(
-      to right,
-      hsl(249, 99%, 64%),
-      hsl(278, 94%, 30%)
-    )
-    1;
-}
-
-.row {
-  width: 100%;
-}
-.mb {
-  margin-bottom: 20px;
-}
-.flexRow {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-}
-.dateInputContainer {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-}
-.dateRow {
-  flex: 1;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
-}
-.dateRow input[type="text"] {
-  flex: 1;
-  margin-right: 5px;
-  width: 20%;
-}
-.cvc {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-.cvc input[type="text"] {
-  width: 100%;
-}
-
-.btnDiv {
-  margin-top: 10px;
-}
-
-.btn {
-  padding: 12px 0;
-  background-color: hsl(278, 68%, 11%);
-  color: white;
-  border-radius: 8px;
-  font-family: "Barlow Semi Condensed", sans-serif;
-  font-weight: bold;
-}
-
-#sendBtn {
-  width: 100%;
-}
-
-#continueButton {
-  width: 50%;
-}
-
-.btn:hover {
-  opacity: 0.8;
-  cursor: pointer;
-}
-.errorMessage {
-  font-size: 14px;
-  color: red;
-  padding-left: 2px;
-}
-.errorBorder {
-  border: 2px solid red;
-}
-@media screen and (max-width: 1200px) {
-  .cardFront {
+@media only screen and (max-width: 1270px) {
+  .exp {
+    display: none;
+  }
+  .card .cardFront #cardNumberText {
+    font-size: 2.8rem;
+  }
+  .rowBottom {
+    font-size: 1.3rem;
+  }
+  .card .cardFront {
     min-width: 350px;
     min-height: 200px;
-    width: 350px;
-    height: 200px;
-    position: relative;
-    bottom: -50px;
   }
-  .cardText {
-    font-size: 16px;
-  }
-  .cardBack {
-    left: 0;
+  .card .cardBack {
+    left: 5rem;
     min-width: 350px;
     min-height: 200px;
-    width: 350px;
-    height: 200px;
-  }
-  .cardBack #cvcText {
-    position: relative;
-    right: 0;
-    top: -18%;
-    color: white;
-  }
-
-  #paymentInformation {
-    width: 100%;
   }
 }
-
-@media screen and (max-width: 476px) {
+@media only screen and (max-width: 1095px) {
+  main {
+    padding: 1rem;
+    height: auto;
+    width: 90%;
+  }
   body {
-    flex-direction: column;
-    align-items: center;
     height: auto;
   }
   .bgFirst {
-    width: 100%;
-    min-width: 400px;
-    height: 200px;
-    min-height: 200px;
     background-image: url("./images/bg-main-mobile.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-  .bgSecond {
+    height: 35rem;
     width: 100%;
-  }
-
-  main {
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    height: auto;
-    width: 90%;
-    top: 10%;
-    left: 2%;
-    right: 2%;
-    padding: 0;
-  }
-  .cardText {
-    font-size: 16px;
-  }
-  .cardFront {
-    position: relative;
-    left: -5%;
-    top: -142px;
-    bottom: 0;
-    z-index: 200;
-  }
-  .cardBack {
-    left: 10%;
   }
   .card {
-    flex: 1;
-    flex-shrink: 0;
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 0;
-    width: 100%;
-    min-width: 450px;
+    flex-direction: row;
+    flex-basis: 100%;
+    justify-content: space-evenly;
   }
-
-  #formContainer {
-    padding: 5px;
-    min-width: 450px;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-    top: -150px;
+  .card .cardFront {
+    z-index: 2;
+    left: 0.8rem;
   }
-  #complated {
-    padding-top: 0;
-    position: relative;
-    top: -250px;
+  .card .cardFront #cardNumberText {
+    font-size: 2.5rem;
+  }
+  .card .cardBack {
+    left: -0.8rem;
+    top: -1rem;
+    z-index: 1;
   }
   .rowBottom {
-    position: relative;
-    top: -10px;
+    font-size: 1.2rem;
+  }
+  #formContainer {
+    flex-basis: 100%;
+    top: -18rem;
+  }
+  #complated {
+    flex-basis: 100%;
+    padding: 0 2rem;
+    top: -5rem;
+  }
+}
+
+@media only screen and (max-width: 794px) {
+  main {
+    width: 100%;
+  }
+  .card {
+    flex-direction: column-reverse;
+    flex-basis: 100%;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .card .cardFront {
+    left: -3.5rem;
+    top: -9.1rem;
+  }
+  .card .cardBack {
+    left: 3.5rem;
+    top: 0rem;
+  }
+  #formContainer #paymentInformation {
+    padding: 0 12rem;
+  }
+}
+@media only screen and (max-width: 794px) {
+  #formContainer #paymentInformation {
+    padding: 0 3rem;
+  }
+  .bgFirst {
+    background-image: url("./images/bg-main-mobile.png");
+    height: 33rem;
+    width: 100%;
   }
 }

@@ -332,6 +332,7 @@ input:focus {
     background-image: url("./images/bg-main-mobile.png");
     height: 35rem;
     width: 100%;
+    min-width: 475px;
   }
   .card {
     flex-direction: row;

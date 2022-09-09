@@ -384,10 +384,10 @@ input:focus {
     top: 0rem;
   }
   #formContainer #paymentInformation {
-    padding: 0 12rem;
+    padding: 0 9rem;
   }
 }
-@media only screen and (max-width: 475px) {
+@media only screen and (max-width: 476px) {
   #formContainer #paymentInformation {
     padding: 0 3rem;
   }

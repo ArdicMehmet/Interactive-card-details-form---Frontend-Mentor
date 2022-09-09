@@ -332,7 +332,7 @@ input:focus {
     background-image: url("./images/bg-main-mobile.png");
     height: 35rem;
     width: 100%;
-    min-width: 475px;
+    min-width: 420px;
   }
   .card {
     flex-direction: row;
@@ -387,7 +387,7 @@ input:focus {
     padding: 0 12rem;
   }
 }
-@media only screen and (max-width: 794px) {
+@media only screen and (max-width: 475px) {
   #formContainer #paymentInformation {
     padding: 0 3rem;
   }

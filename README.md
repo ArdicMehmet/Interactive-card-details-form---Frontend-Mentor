@@ -1,3 +1,7 @@
+This project is prepared with Html5, Css3 and Javascript
+
+Live :https://ardicmehmet.github.io/Interactive-card-details-form-Frontend-Mentor/
+
 Desktop View
 
 ![bgDesktop](https://user-images.githubusercontent.com/48796920/189366024-8b5f4b75-efa4-4998-8064-d110f4b8fdc1.PNG)

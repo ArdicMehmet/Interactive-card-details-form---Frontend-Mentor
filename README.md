@@ -1,6 +1,6 @@
 This project is prepared with Html5, Css3 and Javascript
 
-Live :https://ardicmehmet.github.io/Interactive-card-details-form-Frontend-Mentor/
+Live : https://ardicmehmet.github.io/Interactive-card-details-form-Frontend-Mentor/
 
 Desktop View
 
